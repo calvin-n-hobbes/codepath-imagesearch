@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context="com.codepath.bootcamp.gridimagesearch.ImageFilterActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <TextView
+        android:id="@+id/tvSearchOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/title_advanced_search_options"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tvSizeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvSearchOptions"
+        android:layout_marginTop="30dp"
+        android:text="@string/image_size"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Spinner
+        android:id="@+id/spnSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvSizeLabel"
+        android:layout_toRightOf="@+id/tvSizeLabel"
+        android:entries="@array/image_sizes" />
+
+    <TextView
+        android:id="@+id/tvColorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/spnSize"
+        android:text="@string/color_filter"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Spinner
+        android:id="@+id/spnColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvColorLabel"
+        android:layout_toRightOf="@+id/tvColorLabel"
+        android:entries="@array/image_colors" />
+
+    <TextView
+        android:id="@+id/tvTypeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/spnColor"
+        android:text="@string/image_type"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Spinner
+        android:id="@+id/spnType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvTypeLabel"
+        android:layout_toRightOf="@+id/tvTypeLabel"
+        android:entries="@array/image_types" />
+
+    <TextView
+        android:id="@+id/tvSiteLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/spnType"
+        android:text="@string/site_filter"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/etSite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSiteLabel"
+        android:layout_alignBottom="@+id/tvSiteLabel"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tvSiteLabel"
+        android:ems="10"
+        android:inputType="textUri" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/btnReset"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/etSite"
+        android:layout_marginTop="15dp"
+        android:onClick="onResetFilter"
+        android:text="@string/reset_options" />
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="onFinish"
+        android:text="@string/ok" />
+
+</RelativeLayout>
