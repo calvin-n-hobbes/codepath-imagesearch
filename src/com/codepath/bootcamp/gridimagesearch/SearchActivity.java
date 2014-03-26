@@ -31,6 +31,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 
 public class SearchActivity extends Activity {
     private static final int IMG_FILTER = 1016;
+    private static final int RESULT_SIZE = 8; // max 8
 
     EditText etQuery;
     GridView gvResults;
@@ -122,8 +123,8 @@ public class SearchActivity extends Activity {
         AsyncHttpClient client = new AsyncHttpClient();
 
         // construct query string
-        StringBuilder sb = new StringBuilder("https://ajax.googleapis.com/ajax/services/search/images?rsz=8");
-        sb.append("&start=" + startPage);
+        StringBuilder sb = new StringBuilder("https://ajax.googleapis.com/ajax/services/search/images?rsz=" + RESULT_SIZE);
+        sb.append("&start=" + startPage * RESULT_SIZE);
         sb.append("&v=1.0");
         sb.append("&q=" + Uri.encode(query));
         if ( null != filter.getSize() ) sb.append("&imgsz=" + filter.getSize().toString());
